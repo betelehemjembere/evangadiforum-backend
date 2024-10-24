@@ -29,10 +29,7 @@ app.use("/api/answer", answerRoutes);
 // Tag route middleware
 app.use("/api/questions", tagRoutes);
 
-// Default route
-app.get('/', (req, res) => {
-    res.send('Welcome to the backend!');
-});
+
 
 // Start server and establish database connection
 async function start() {
@@ -44,6 +41,7 @@ async function start() {
         // Start the server after successful DB connection
         await app.listen(port, () => {
             console.log(`Server is listening on port ${port}`);
+            
         });
     } catch (error) {
         console.error("Error starting the server:", error);
